@@ -1,0 +1,15 @@
+CONCLUSIONES – PRUEBA DE PERFORMANCE LOGIN API
+
+Durante la ejecución de la prueba de carga sobre el endpoint de login, se evaluó el comportamiento del sistema bajo un flujo constante de peticiones concurrentes durante un periodo de 5 minutos.
+
+En total, se procesaron 5,991 solicitudes sin presentar errores a nivel HTTP, lo cual indica que el servicio se mantiene disponible y estable bajo condiciones de carga moderada. Este resultado es positivo desde el punto de vista de infraestructura, ya que no se evidencian caídas, rechazos de conexión ni degradación crítica del servicio.
+
+En cuanto a los tiempos de respuesta, se obtuvo un promedio cercano a los 343 milisegundos, con un percentil 95 alrededor de los 356 milisegundos. Estos valores se consideran adecuados y dentro de estándares aceptables para APIs de autenticación. Sin embargo, se identificaron picos aislados que alcanzan aproximadamente los 2.4 segundos, lo cual sugiere posibles variaciones puntuales en el rendimiento que podrían ser analizadas en mayor profundidad.
+
+Un hallazgo relevante durante la prueba es la presencia de un alto número de validaciones fallidas (Failed Checks). Este comportamiento no está relacionado con errores del sistema, sino con la lógica de validación definida en el script de prueba. Es posible que las respuestas del API no coincidan exactamente con las condiciones evaluadas, o que los datos utilizados (usuarios y contraseñas) no sean completamente válidos para todos los escenarios ejecutados.
+
+A pesar de lo anterior, es importante resaltar que no se registraron errores de tipo HTTP (0% de fallos en requests), lo que confirma que el sistema responde correctamente a nivel técnico y es capaz de soportar la carga generada.
+
+Desde una perspectiva profesional, se puede concluir que la API presenta un buen nivel de estabilidad, tiempos de respuesta consistentes y capacidad de manejo de múltiples solicitudes concurrentes. No obstante, se recomienda ajustar las validaciones funcionales del script para asegurar una correcta interpretación de las respuestas, así como realizar pruebas adicionales de mayor duración o con incremento progresivo de carga para evaluar el comportamiento del sistema en escenarios más exigentes.
+
+En términos generales, la implementación de la prueba es adecuada, cumple con los objetivos de evaluación de performance y demuestra un enfoque estructurado en la medición de métricas clave. Con pequeños ajustes en las validaciones, la solución alcanzaría un nivel completamente sólido desde el punto de vista técnico y funcional.
