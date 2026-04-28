@@ -1,0 +1,83 @@
+========================================
+K6 LOAD TEST SUMMARY
+========================================
+
+Test Name: App Transaction Balance
+Execution Date: 2026-04-28
+
+----------------------------------------
+CHECKS
+----------------------------------------
+✔ checks.........................: 97.55% ✓ 269891 ✗ 6759
+
+----------------------------------------
+DATA TRANSFER
+----------------------------------------
+data_received....................: 842 MB (223 kB/s)
+data_sent........................: 588 MB (156 kB/s)
+
+----------------------------------------
+REQUESTS
+----------------------------------------
+http_reqs........................: 276650 (73.17 req/s)
+
+----------------------------------------
+ERRORS
+----------------------------------------
+http_req_failed..................: 2.44% ✓ 6759 ✗ 269891
+
+Breakdown:
+- HTTP 4xx errors...............: 769
+- HTTP 5xx errors...............: 5987
+
+----------------------------------------
+LATENCY (http_req_duration)
+----------------------------------------
+avg..............................: 861.68 ms
+min..............................: 191.86 ms
+med..............................: 613.42 ms
+p(90)............................: 1.28 s
+p(95)............................: 1.57 s
+max..............................: 29.93 s
+
+----------------------------------------
+TIMINGS
+----------------------------------------
+http_req_blocked.................: avg=10.97 µs
+http_req_connecting..............: avg=3.3 µs
+http_req_tls_handshaking.........: avg=7.36 µs
+http_req_sending.................: avg=43.22 µs
+http_req_waiting.................: avg=861.21 ms
+http_req_receiving...............: avg=424.03 µs
+
+----------------------------------------
+ITERATIONS
+----------------------------------------
+iterations.......................: 276650 (73.17/s)
+iteration_duration...............: avg=1.86 s
+
+----------------------------------------
+VIRTUAL USERS (VUs)
+----------------------------------------
+vus..............................: min=2 max=140
+vus_max..........................: 140
+
+----------------------------------------
+THROUGHPUT ANALYSIS
+----------------------------------------
+Average Throughput...............: 73.17 req/s
+Peak Throughput..................: ~73 req/s
+
+----------------------------------------
+OBSERVACIONES
+----------------------------------------
+- El sistema presenta buen desempeño bajo condiciones de baja carga
+- El throughput se estabiliza alrededor de 70–73 req/s, indicando un límite de capacidad
+- La distribución de latencia muestra presencia de valores atípicos (outliers)
+- La alta proporción de errores 5xx indica inestabilidad en el backend
+- El tiempo máximo de respuesta (~30s) sugiere posibles timeouts o saturación de recursos
+- El sistema alcanza un punto de saturación entre 100 y 140 usuarios virtuales
+
+========================================
+END OF REPORT
+========================================
